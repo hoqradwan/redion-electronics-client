@@ -1,0 +1,19 @@
+.product{
+    position: relative;
+    height: 450px;
+    padding: 15px 15px;
+}
+.update{
+    position: absolute;
+    background-color: #6768AB;
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    bottom: 10px;
+}
+/* .update:hover{
+    background-color: white ;
+    color: #6768AB;
+    border: 1px solid #6768AB;
+} */

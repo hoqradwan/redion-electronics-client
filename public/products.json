@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "name": "Bose Home Speaker 500: Smart Bluetooth Speaker",
+    "supplier" : "Bose",
+    "image": "https://m.media-amazon.com/images/I/81yLJFSZ3fL._AC_UY327_FMwebp_QL65_.jpg",
+    "price": 349,
+    "quantity": 6,
+    "description": "3D speaker"
+
+  },
+  {
+    "id": 2,
+    "name": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset",
+    "supplier" : "Meta",
+    "image": "https://m.media-amazon.com/images/I/61tE7IcuLmL._AC_UY327_FMwebp_QL65_.jpg",
+    "price": 299,
+    "quantity": 9,
+    "description": "Crystal clear sound"
+  },
+  {
+    "id": 3,
+    "name": "Acer Aspire 5 A515-56-36UT",
+    "supplier" : "Acer",
+    "image": "https://m.media-amazon.com/images/I/71233PTgAjL._AC_UY327_FMwebp_QL65_.jpg",
+    "price": 341,
+    "quantity": 15,
+    "description": "High performance laptop"
+  },
+  {
+    "id": 4,
+    "name": "Marshall Electronics CV610-U2 5MP Camera,",
+    "supplier" : "Marshall",
+    "image": "https://m.media-amazon.com/images/I/31WfRdCnUTL._AC_UY327_FMwebp_QL65_.jpg",
+    "price": 499,
+    "quantity": 15,
+    "description": "amazing features"
+  },
+  {
+    "id": 5,
+    "name": "JBL Clip 4: Portable Speaker with Bluetooth",
+    "supplier" : "JBL",
+    "image": "https://m.media-amazon.com/images/I/71QPVncGWpL._AC_UY327_FMwebp_QL65_.jpg",
+    "price": 160,
+    "quantity": 50,
+    "description": "3D sound effect"
+  },
+  {
+    "id": 6,
+    "name": "Samsung Electronics 980 PRO SSD",
+    "supplier" : "Samsung",
+    "image": "https://m.media-amazon.com/images/I/8176dGPvOKL._AC_UY327_FMwebp_QL65_.jpg",
+    "price": 165,
+    "quantity": 69,
+    "description": "High speed SSD"
+  },
+  {
+    "id": 7,
+    "name": "Logitech G910 Orion Spectrum RGB Mechanical Keyboard",
+    "supplier" : "Logitech",
+    "image": "https://m.media-amazon.com/images/I/61IVHE8oy9L._AC_UY327_FMwebp_QL65_.jpg",
+    "price": 50,
+    "quantity": 55,
+    "description": "Durable keyboard"
+  },
+  {
+    "id": 8,
+    "name": "HP DeskJet 2755e Wireless Color All-in-One Printer",
+    "supplier" : "HP",
+    "image": "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_UL480_QL65_.jpg",
+    "price": 170,
+    "quantity": 75,
+    "description": "Efficient printer"
+  },
+  {
+    "id": 9,
+    "name": "Seagate Portable 2TB External Hard Drive Portable HDD",
+    "supplier" : "Seagate",
+    "image": "https://m.media-amazon.com/images/I/81tjLksKixL._AC_UL480_QL65_.jpg",
+    "price": 120,
+    "quantity": 28,
+    "description": "long lasting HDD"
+  },
+  {
+    "id": 10,
+    "name": "Sceptre 24 inch Professional Thin 75Hz 1080p LED Monitor",
+    "supplier" : "Sceptre",
+    "image": "https://m.media-amazon.com/images/I/71rXSVqET9L._AC_UL480_QL65_.jpg",
+    "price": 250,
+    "quantity": 60,
+    "description": "High quality graphics"
+  },
+  {
+    "id": 11,
+    "name": "AMD Ryzen 9 5900X processor",
+    "supplier" : "AMD",
+    "image": "https://m.media-amazon.com/images/I/616VM20+AzL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 394,
+    "quantity": 27,
+    "description": "superfast processor"
+  },
+  {
+    "id": 12,
+    "name": "Logitech H390 Wired Headset",
+    "supplier" : "Logitech",
+    "image": "https://m.media-amazon.com/images/I/61CqYq+xwNL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 90,
+    "quantity": 45,
+    "description": "Black headset"
+  }
+]

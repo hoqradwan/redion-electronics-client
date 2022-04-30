@@ -1,36 +1,61 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from 'firebase/auth';
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
+import "./Header.css";
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
   return (
-    <div>
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Container>
-          <Navbar.Brand as={Link} to="/">RediOn</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-            <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
-              <Nav.Link as={Link} to="/about">About</Nav.Link>
-            </Nav>
+    <Navbar className="navbar" collapseOnSelect expand="lg" variant="light">
+      <Container>
+        <Navbar.Brand as={Link} to="/">
+          <h2 className="logo">RediOn</h2>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/blogs">
+              Blogs
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
+          </Nav>
+
+          {user ? (
             <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/add">Add Items</Nav.Link>
-              <Nav.Link as={Link} to="/manage">Manage Items</Nav.Link>
-              <Nav.Link as={Link} to="/myitems">My Items</Nav.Link>
-              <Nav.Link as={Link} to="/login">Login</Nav.Link>
-              <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
+              <Nav.Link onClick={() => signOut(auth)}>Log out</Nav.Link>
             </Nav>
-            <Nav>
-            {/*   <Nav.Link href="#deets">More deets</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
-              </Nav.Link> */}
+          ) : (
+            <Nav className="ms-auto">
+              <Nav.Link as={Link} to="/add">
+                Add Items
+              </Nav.Link>
+              <Nav.Link as={Link} to="/manage">
+                Manage Items
+              </Nav.Link>
+              <Nav.Link as={Link} to="/myitems">
+                My Items
+              </Nav.Link>
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
             </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+          )}
+
+          {/*   */}
+
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/signup">
+              Sign Up
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
