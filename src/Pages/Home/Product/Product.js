@@ -8,7 +8,7 @@ const Product = ({ product }) => {
     <div className="g-5 col-sm-12 col-md-6 col-lg-4">
       <div className="product card mt-2">
         <img
-          height={150}
+          height={200}
           width={50}
           src={image}
           className="card-img-top"
