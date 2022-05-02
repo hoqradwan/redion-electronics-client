@@ -1,0 +1,14 @@
+.login-btn{
+    background-color: #6768ab;
+    color: white;
+    border: none;
+    padding: 8px 145px;
+    border-radius: 5px;
+}
+.signup-text{
+    color: #6768ab;
+}
+.reset{
+    color: #6768ab;
+    cursor: pointer;
+}

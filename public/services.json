@@ -1,0 +1,22 @@
+[
+    {
+        "id" : 1,
+        "img": "https://media.istockphoto.com/photos/distribution-warehouse-picture-id1317600209?b=1&k=20&m=1317600209&s=170667a&w=0&h=j1umuc53n4tFbqQZZSaFw72ePqYmGflbEyyRCU1HZGM=",
+        "serviceName": "Available and enough space to store your products"
+    },
+    {
+        "id" : 2,
+        "img": "https://media.istockphoto.com/photos/moving-boxes-picture-id186543493?b=1&k=20&m=186543493&s=170667a&w=0&h=I0hy7aVTxn7O4xUTevGEdV5PFTdnZaJIEaQg4odwD78=",
+        "serviceName": "Keeping your products well packed and organized"
+    },
+    {
+        "id" : 3,
+        "img": "https://media.istockphoto.com/photos/supermarket-employee-using-a-tablet-to-check-stock-picture-id1253346118?b=1&k=20&m=1253346118&s=170667a&w=0&h=4pMWx1ERXKGgqewjCiu4mP9O49kdSWerWYvASRitq-A=",
+        "serviceName": "Quality service with proficient manpower"
+    },
+    {
+        "id" : 3,
+        "img": "https://media.istockphoto.com/photos/coworkers-rushing-to-load-packages-in-a-delivery-van-picture-id1177117400?b=1&k=20&m=1177117400&s=170667a&w=0&h=MSBEDvpAoFXOf5bZs0PTDp-W4YwIsRIwwN57N5WSpD4=",
+        "serviceName": "Proper distribution of your valuable electronics products"
+    }
+]

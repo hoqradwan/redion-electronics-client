@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import { Spinner } from "react-bootstrap";
 
 const Loading = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div style={{height: '300px'}} className='w-100 d-flex justify-content-center align-items-center'>
+      <Spinner animation="border" variant="primary" role="status"></Spinner>;
+    </div>
+  );
 };
 
 export default Loading;

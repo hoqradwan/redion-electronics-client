@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import useProducts from "../../../hooks/useProducts";
 import Product from "../Product/Product";
 import "./Products.css"
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const [products] = useProducts();
   const navigate = useNavigate();
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  });
+
   const slicedProducts = products.slice(0, 6);
   return (
     <div id="products" className="container">
@@ -19,7 +16,7 @@ const Products = () => {
       </h2>
       <div className="row mb-3">
         {slicedProducts.map((product) => (
-          <Product key={product.id} product={product}></Product>
+          <Product key={product._id} product={product}></Product>
         ))}
       </div>
       <div className="text-center">

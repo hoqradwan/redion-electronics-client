@@ -11,6 +11,8 @@ import ManageItems from './Pages/ManageItems/ManageItems';
 import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import Inventory from './Pages/Inventory/Inventory';
+import ProductDetail from './ProductDetail/ProductDetail';
+import Checkout from './Pages/Checkout/Checkout';
 
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
      <Route path='/blogs' element={<Blogs></Blogs>}></Route>
      <Route path='/about' element={<About></About>}></Route>
      <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+     {/* <Route path='/inventory/:productId' element={<Inventory></Inventory>}></Route> */}
+     <Route path='/products/:productId' element={<ProductDetail></ProductDetail>}></Route>
+     <Route path='/checkout/:productId' element={<Checkout></Checkout>}></Route>
      <Route path='/add' element={<AddItems></AddItems>}></Route>
      <Route path='/manage' element={<ManageItems></ManageItems>}></Route>
      <Route path='/myitems' element={<MyItems></MyItems>}></Route>
