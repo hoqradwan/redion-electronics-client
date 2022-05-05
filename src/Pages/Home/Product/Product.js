@@ -24,8 +24,8 @@ const Product = ({ product }) => {
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
-          <p>{price}</p>
-          <p>{quantity}</p>
+          <p>${price}</p>
+          <p>Quantity: {quantity}</p>
           <p>{supplier}</p>
 
           {/* <Link to={`/products/${productId}`}> */}

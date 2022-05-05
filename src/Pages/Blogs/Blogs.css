@@ -1,0 +1,13 @@
+.blogs-container{
+    margin-top: 80px;
+}
+.blog{
+    border: 1px solid lightslategray;
+   margin: 15px 70px;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: justify;
+}
+.blog-head{
+    color: lightslategray;
+}
