@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useProductDetail from "../hooks/useProductDetail";
-import './ProductDetail.css';
+import "./ProductDetail.css";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -54,10 +54,13 @@ const ProductDetail = () => {
       });
   };
   return (
-    <div className="d-flex justify-content-center align-items-center mt-5">
-      <img width={300} height={300} className="me-5" src={image} alt="" />
+    <div className="container mt-5">
+ <div className="row">
+      <div className="col-lg-5">
+        <img  className="me-5 img-fluid" src={image} alt="" />
+      </div>
 
-      <div>
+      <div className="col-lg-7">
         <h4>{name}</h4>
         <h6>Product id: {_id}</h6>
         <p>{description}</p>
@@ -66,14 +69,20 @@ const ProductDetail = () => {
         <p className="text-muted lh-1">{supplier}</p>
         <form onSubmit={handleForm}>
           <input className="" name="name" type="number" />
-          <input className="restock my-2 mx-1 rounded" type="submit" value="Restock products" />
+          <input
+            className="restock my-2 mx-1 rounded"
+            type="submit"
+            value="Restock products"
+          />
         </form>
 
-        <button  onClick={() => handleDeliver()} className="deliver px-3 py-1">
+        <button onClick={() => handleDeliver()} className="deliver px-3 py-1">
           Deliver
         </button>
       </div>
     </div>
+    </div>
+   
   );
 };
 

@@ -5,7 +5,7 @@ import './AddItems.css';
 const AddItems = () => {
   const {register, handleSubmit} = useForm();
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://safe-lake-62248.herokuapp.com/products`;
     fetch(url, {
       method: 'POST',
       headers: {

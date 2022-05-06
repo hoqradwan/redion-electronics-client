@@ -23,7 +23,7 @@ const Login = () => {
   }
   let errorElement;
   if (error) {
-    errorElement = <p>{error.message}</p>;
+    errorElement = <p className="text-danger">{error.message}</p>;
   }
 
   const handleEmailChange = (e) => {
@@ -59,9 +59,6 @@ const Login = () => {
             placeholder="Password"
           />
         </Form.Group>
-        {/*   <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group> */}
         <p>
           New to RediOn?{" "}
           <Link to="/signup" className="text-decoration-none">
