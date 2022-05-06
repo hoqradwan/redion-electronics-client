@@ -1,16 +1,18 @@
 .product{
     position: relative;
-    height: 500px;
-    padding: 15px 15px;
+    height: 260px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px;
 }
 .update{
-    position: absolute;
-    background-color: #6768AB;
+    background-color: #80ACED;
     color: white;
     border: none;
     padding: 5px 20px;
     border-radius: 5px;
-    bottom: 10px;
+}
+.price{
+    color: #f9ad81 ;
 }
 /* .update:hover{
     background-color: white ;

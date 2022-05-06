@@ -1,9 +1,11 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 
 const ManageItems = () => {
   const [products, setProducts] = useProducts();
+  const navigate = useNavigate();
   const handleDelete = (id) =>{
     const url = `http://localhost:5000/products/${id}`;
     fetch(url, {
@@ -40,6 +42,7 @@ const ManageItems = () => {
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td><button onClick={()=>handleDelete(product._id)}>X</button></td>
+              <td><button className="text-white px-2 py-1" style={{border: 'none', backgroundColor: '#7CA7E4'}} onClick={()=>navigate('/add')}>Add new item</button></td>
             </tr>
           );
         })}

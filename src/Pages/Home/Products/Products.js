@@ -11,7 +11,7 @@ const Products = () => {
   const slicedProducts = products.slice(0, 6);
   return (
     <div id="products" className="container">
-      <h2 style={{ color: "#6768AB" }} className="text-center mt-5">
+      <h2 style={{ color: "#6768AB" }} className="fw-bold text-center mt-5 mb-4">
         Products Inventory
       </h2>
       <div className="row mb-3">
@@ -19,9 +19,9 @@ const Products = () => {
           <Product key={product._id} product={product}></Product>
         ))}
       </div>
-      <div className="text-center">
-        <button className="px-5 py-1 mt-3 all-btn" onClick={() => navigate("/inventory")}>
-          See all products
+      <div className="">
+        <button className="btn btn-link text-decoration-none" onClick={() => navigate("/manage")}>
+         Manage Inventories
         </button>
       </div>
     </div>

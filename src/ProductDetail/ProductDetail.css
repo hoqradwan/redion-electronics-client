@@ -1,0 +1,23 @@
+.restock {
+  background-color: #37526d;
+  border: none;
+  color: white;
+  padding: 2px 6px;
+}
+.deliver {
+  background-color: #80aced;
+  color: white;
+  border: none;
+}
+
+input[type="number"] {
+  border: 2px solid #dbd9d9;
+  border-radius: 4px;
+  width: 60px;
+}
+
+input[type="number"]:focus {
+  border: 2px solid white;
+  border-radius: 4px;
+  width: 60px;
+}

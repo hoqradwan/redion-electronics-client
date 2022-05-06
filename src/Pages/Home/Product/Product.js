@@ -7,34 +7,31 @@ const Product = ({ product }) => {
   const { productId } = useParams();
   const navigate = useNavigate();
 
-    const navigateToProductDetail = (id) => {
+  const navigateToProductDetail = (id) => {
     navigate(`/products/${id}`);
   };
 
   return (
-    <div className="g-5 col-sm-12 col-md-6 col-lg-4">
-      <div className="product card mt-2">
+    <div className="product d-flex align-items-center my-2 ps-5">
+      <div className="col-lg-4">
         <img
-          height={150}
-          width={50}
+        width={200}
+        height={200}
           src={image}
-          className="card-img-top"
+          className=""
           alt="..."
         />
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
-          <p>${price}</p>
-          <p>Quantity: {quantity}</p>
-          <p>{supplier}</p>
+      </div>
+      <div className="col-lg-8">
+        <h5 className="lh-sm">{name}</h5>
+        <p className="lh-sm">{description}</p>
+        <p className="fw-bold fs-4 mb-4 price">${price}</p>
+        <p className="lh-1">Quantity: {quantity}</p>
+        <p className="lh-1 text-muted fs-6">{supplier}</p>
 
-          {/* <Link to={`/products/${productId}`}> */}
-          
-          <button onClick={()=>navigateToProductDetail(_id)} className="update">Manage</button>
-          {/* </Link> */}
-                     
-
-        </div>
+        <button onClick={() => navigateToProductDetail(_id)} className="update">
+          Manage
+        </button>
       </div>
     </div>
   );
