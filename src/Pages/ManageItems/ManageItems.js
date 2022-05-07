@@ -1,17 +1,14 @@
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Table } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
-import useProductDetail from "../../hooks/useProductDetail";
+import { useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
+import "./ManageItems.css";
 
 const ManageItems = () => {
   const [products, setProducts] = useProducts();
   const navigate = useNavigate();
-  /*  const [product] = useProductDetail();
-  const {_id} = product;
- */
-  // const {productId} = useParams();
-
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
@@ -33,6 +30,15 @@ const ManageItems = () => {
   };
   return (
     <>
+      <div className="text-center my-2">
+        <button
+          className="text-white  px-2 py-1"
+          style={{ border: "none", backgroundColor: "#7CA7E4" }}
+          onClick={() => navigate("/add")}
+        >
+          Add new item
+        </button>
+      </div>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -53,10 +59,16 @@ const ManageItems = () => {
                 <td>{product.supplier}</td>
                 <td>{product.quantity}</td>
                 <td>{product.price}</td>
-                <td>
-                  <button onClick={() => handleDelete(product._id)}>X</button>
+                <td className="text-center">
+                  <button
+                    className="delete"
+                    onClick={() => handleDelete(product._id)}
+                  >
+                    {" "}
+                    <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
+                  </button>
                 </td>
-                <td>
+                <td className="text-center">
                   <button
                     className="text-white px-2 py-1"
                     style={{ border: "none", backgroundColor: "orange" }}
@@ -70,15 +82,6 @@ const ManageItems = () => {
           })}
         </tbody>
       </Table>
-      <div className="text-center my-2">
-        <button
-          className="text-white  px-2 py-1"
-          style={{ border: "none", backgroundColor: "#7CA7E4" }}
-          onClick={() => navigate("/add")}
-        >
-          Add new item
-        </button>
-      </div>
     </>
   );
 };

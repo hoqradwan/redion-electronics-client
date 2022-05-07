@@ -1,9 +1,13 @@
+import { Toast } from "bootstrap";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
 import './AddItems.css';
 
 const AddItems = () => {
   const {register, handleSubmit} = useForm();
+  const [user] = useAuthState(auth);
   const onSubmit = (data) => {
     const url1 = `https://safe-lake-62248.herokuapp.com/products`;
     fetch(url1, {
@@ -18,7 +22,7 @@ const AddItems = () => {
         console.log(result);
       });
     const url2 = `https://safe-lake-62248.herokuapp.com/items`;
-    fetch(url2, {
+    fetch(url2 ,{
       method: 'POST',
       headers: {
         "content-type": "application/json",
@@ -26,8 +30,11 @@ const AddItems = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
+      .then((data) => {
+        if(data.insertedId){
+          alert('Item inserted')
+        }
+        console.log(data);
       });
   };
   return (

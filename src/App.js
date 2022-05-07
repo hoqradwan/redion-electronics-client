@@ -14,6 +14,7 @@ import Inventory from "./Pages/Inventory/Inventory";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import Checkout from "./Pages/Checkout/Checkout";
 import RequireAuth from "./Pages/Auth/RequireAuth/RequireAuth";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
         <Route path="/signup" element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
