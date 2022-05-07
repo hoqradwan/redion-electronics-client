@@ -9,7 +9,7 @@ const MyItems = () => {
     // const navigate = useNavigate();
     useEffect(()=>{
      const email = user.email;
-     const url = `https://safe-lake-62248.herokuapp.com/items?email=${email}`
+     const url = `https://safe-lake-62248.herokuapp.com/products?email=${email}`
      fetch(url)
      .then(res => res.json())
      .then(data => setItems(data))
@@ -17,6 +17,7 @@ const MyItems = () => {
     return (
         <div>
             <h1>This is my items: {items.length}</h1>
+            <p>{user.email}</p>
         </div>
     );
 };

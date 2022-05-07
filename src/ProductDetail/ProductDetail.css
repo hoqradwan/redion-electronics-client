@@ -2,7 +2,6 @@
   background-color: #37526d;
   border: none;
   color: white;
-  padding: 2px 6px;
 }
 .deliver {
   background-color: #80aced;
@@ -14,7 +13,7 @@ input[type="number"] {
   background-color: white;
   border: 1px solid #dbd9d9;
   border-radius: 4px;
-  width: 80px;
+  width: 100px;
 }
 
 input[type="number"]:focus {
@@ -23,4 +22,11 @@ input[type="number"]:focus {
   border-radius: 4px;
   width: 60px;
   outline: none;
+}
+.detailManage{
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 4px 6px;
+
 }
