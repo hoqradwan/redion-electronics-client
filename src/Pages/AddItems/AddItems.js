@@ -5,8 +5,20 @@ import './AddItems.css';
 const AddItems = () => {
   const {register, handleSubmit} = useForm();
   const onSubmit = (data) => {
-    const url = `https://safe-lake-62248.herokuapp.com/products`;
-    fetch(url, {
+    const url1 = `https://safe-lake-62248.herokuapp.com/products`;
+    fetch(url1, {
+      method: 'POST',
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+    const url2 = `https://safe-lake-62248.herokuapp.com/items`;
+    fetch(url2, {
       method: 'POST',
       headers: {
         "content-type": "application/json",

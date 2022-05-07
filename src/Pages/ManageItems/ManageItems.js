@@ -11,18 +11,23 @@ const ManageItems = () => {
   const {_id} = product;
  */
   // const {productId} = useParams();
+
   const handleDelete = (id) => {
-    const url = `https://safe-lake-62248.herokuapp.com/products/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        const remaining = products.filter((product) => product._id !== id);
-        setProducts(remaining);
-      });
+    const proceed = window.confirm("Are you sure you want to delete?");
+    if (proceed) {
+      const url = `https://safe-lake-62248.herokuapp.com/products/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaining = products.filter((product) => product._id !== id);
+          setProducts(remaining);
+        });
+    }
   };
+
   const navigateToProductDetail = (id) => {
     navigate(`/products/${id}`);
   };
