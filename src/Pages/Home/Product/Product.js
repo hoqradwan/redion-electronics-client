@@ -13,16 +13,16 @@ const Product = ({ product }) => {
 
   return (
     <div className="product d-flex align-items-center my-2 ps-5">
-      <div className="col-lg-4">
+      <div className="col-lg-4 col-12">
         <img
         width={200}
         height={200}
           src={image}
-          className=""
+          className="img-fluid"
           alt="..."
         />
       </div>
-      <div className="col-lg-8">
+      <div className="col-lg-8 col-12">
         <h5 className="lh-sm">{name}</h5>
         <p className="lh-sm">{description}</p>
         <p className="fw-bold fs-4 mb-4 price">${price}</p>
