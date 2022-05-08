@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useProductDetail from "../../hooks/useProductDetail";
 import "./ProductDetail.css";
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
-  const [isReload, setIsReload ] = useState(false);
-  
+  const [isReload, setIsReload] = useState(false);
+
   const [product, setProduct] = useState({});
 
-    useEffect(()=>{
+  useEffect(() => {
     const url = `https://safe-lake-62248.herokuapp.com/products/${productId}`;
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setProduct(data))
-    },[productId, isReload])
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  }, [productId, isReload]);
   let { _id, name, image, description, price, quantity, supplier } = product;
 
   const handleForm = (event) => {
@@ -38,12 +37,12 @@ const ProductDetail = () => {
       .then((data) => {
         console.log(data);
         event.target.reset();
-        setIsReload(!isReload)
+        setIsReload(!isReload);
       });
   };
   const handleDeliver = () => {
-    const quantity = parseInt(product.quantity) -1 ;
-    const updatedProduct = {quantity} ;
+    const quantity = parseInt(product.quantity) - 1;
+    const updatedProduct = { quantity };
 
     const url = `https://safe-lake-62248.herokuapp.com/products/${productId}`;
     fetch(url, {
@@ -57,8 +56,8 @@ const ProductDetail = () => {
       .then((data) => {
         console.log(data);
         const proceed = window.confirm("Deliver product?");
-        if(proceed){
-          setIsReload(!isReload)
+        if (proceed) {
+          setIsReload(!isReload);
         }
       });
   };

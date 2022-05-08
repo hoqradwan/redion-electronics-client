@@ -2,15 +2,19 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const MyItems = () => {
+  const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
   useEffect(() => {
-    const url = `https://safe-lake-62248.herokuapp.com/items`;
+    const email = user.email;
+    const url = `https://safe-lake-62248.herokuapp.com/items?email=${email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));
-  }, [items]);
+  }, [user]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
@@ -53,7 +57,7 @@ const MyItems = () => {
                 <td className="text-center">
                   <button
                     className="delete"
-                    onClick={() => handleDelete([item._id])}
+                    onClick={() => handleDelete(item._id)}
                   >
                     <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
                   </button>

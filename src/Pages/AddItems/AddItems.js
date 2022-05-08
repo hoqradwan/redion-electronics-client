@@ -74,6 +74,12 @@ const AddItems = () => {
           type="text"
           {...register("img")}
         />
+        <input
+          className="mb-2 form-control"
+          placeholder="Email Address"
+          type="text"
+          {...register("email")}
+        />
         <input className="addProduct py-2" type="submit" value="Add Product" />
       </form>
     </div>
