@@ -61,11 +61,11 @@ const ProductDetail = () => {
   return (
     <div className="container mt-5">
  <div className="row">
-      <div className="col-lg-5">
-        <img  className="me-5 img-fluid" src={image} alt="" />
+      <div className="col-lg-5 text-center my-2">
+        <img width={300} height={300}   className=" img-fluid" src={image} alt="" />
       </div>
 
-      <div className="col-lg-7">
+      <div className="col-lg-7 mt-4">
         <h4>{name}</h4>
         <h6>Product id: {_id}</h6>
         <p>{description}</p>

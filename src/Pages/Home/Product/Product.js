@@ -12,17 +12,18 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div className="product d-flex align-items-center my-2 ps-5">
-      <div className="col-lg-4 col-12">
+    <div className="container product p-3 mt-3">
+      <div className="row">
+      <div className="col-lg-5 mb-2 text-center">
         <img
-        width={200}
-        height={200}
+       width={200}
+       height={200}
           src={image}
           className="img-fluid"
           alt="..."
         />
       </div>
-      <div className="col-lg-8 col-12">
+      <div className="col-lg-7">
         <h5 className="lh-sm">{name}</h5>
         <p className="lh-sm">{description}</p>
         <p className="fw-bold fs-4 mb-4 price">${price}</p>
@@ -33,6 +34,9 @@ const Product = ({ product }) => {
           Manage
         </button>
       </div>
+      </div>
+     
+     
     </div>
   );
 };

@@ -1,12 +1,15 @@
 .restock {
-  background-color: #37526d;
+  /* background-color: #37526d; */
+  background-color: #608bb6;
   border: none;
   color: white;
+  padding: 3px 6px;
 }
 .deliver {
   background-color: #80aced;
   color: white;
   border: none;
+  border-radius: 5px;
 }
 
 input[type="number"] {
@@ -24,9 +27,10 @@ input[type="number"]:focus {
   outline: none;
 }
 .detailManage{
-  background-color: orange;
+  background-color: #F9AD81;
   color: white;
   border: none;
   padding: 4px 6px;
+  border-radius: 5px;
 
 }
