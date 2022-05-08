@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
@@ -28,6 +29,9 @@ const Login = () => {
   let errorElement;
   if (error) {
     errorElement = <p className="text-danger">{error.message}</p>;
+  }
+  if(loading){
+    return <Loading></Loading>
   }
 
   const handleEmailChange = (e) => {

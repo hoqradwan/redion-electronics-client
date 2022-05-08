@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import './Register.css';
 
@@ -16,6 +17,9 @@ const Register = () => {
 
   if (user) {
     navigate("/");
+  }
+  if(loading){
+    return <Loading></Loading>
   }
   let errorElement;
   if (error) {

@@ -10,7 +10,6 @@ import AddItems from "./Pages/AddItems/AddItems";
 import ManageItems from "./Pages/ManageItems/ManageItems";
 import MyItems from "./Pages/MyItems/MyItems";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
-import Checkout from "./Pages/Checkout/Checkout";
 import RequireAuth from "./Pages/Auth/RequireAuth/RequireAuth";
 import Footer from "./Pages/Shared/Footer/Footer";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
@@ -31,10 +30,6 @@ function App() {
               <ProductDetail></ProductDetail>
             </RequireAuth>
           }
-        ></Route>
-        <Route
-          path="/checkout/:productId"
-          element={<Checkout></Checkout>}
         ></Route>
         <Route
           path="/add"
