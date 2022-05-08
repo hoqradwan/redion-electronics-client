@@ -10,7 +10,9 @@ const ProductDetail = () => {
   let { _id, name, image, description, price, quantity, supplier } = product;
   // console.log(typeof quantity);
   const [q, setQ] = useState(0);
-  // setQ(quantity);
+  useEffect(() => {
+    setQ(quantity);
+  }, [quantity]);
 
 
   const handleForm = (event) => {
@@ -32,7 +34,7 @@ const ProductDetail = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // setQ(updatedProduct.quantity);
+        setQ(updatedProduct.quantity);
         // console.log(updatedProduct.quantity);
       });
   };
@@ -40,8 +42,9 @@ const ProductDetail = () => {
     if (quantity > 0) {
       quantity = quantity - 1;
     }
-    console.log(quantity)
     const updatedProduct = { quantity };
+    console.log(quantity)
+
     const url = `https://safe-lake-62248.herokuapp.com/products/${productId}`;
     fetch(url, {
       method: "PUT",
@@ -53,9 +56,11 @@ const ProductDetail = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // setQ(updatedProduct.quantity);
+        setQ(quantity);
+
         // setQ(parseInt(updatedProduct.quantity));
       });
+
   };
 
   return (

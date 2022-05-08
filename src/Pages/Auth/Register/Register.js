@@ -3,13 +3,13 @@ import { Button, Form } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 import './Register.css';
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
-  // const [error, setError] = useState('')
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const Register = () => {
   };
   return (
     <>
-      <Form className="w-25 mx-auto mt-5" onSubmit={handleSubmit}>
+      <Form className="w-25 mx-auto mt-5 mb-3" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control type="text" placeholder="Your Name" />
         </Form.Group>
@@ -80,6 +80,8 @@ const Register = () => {
         </button>
         {errorElement}
       </Form>
+      <SocialLogin></SocialLogin>
+
     </>
   );
 };

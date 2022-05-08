@@ -64,7 +64,6 @@ const ManageItems = () => {
                     className="delete"
                     onClick={() => handleDelete(product._id)}
                   >
-                    {" "}
                     <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
                   </button>
                 </td>

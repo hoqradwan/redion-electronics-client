@@ -1,10 +1,11 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
@@ -12,6 +13,9 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, error1] =
@@ -19,8 +23,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   if (user) {
-    navigate("/");
-  }
+    navigate(from, { replace: true });
+  } 
   let errorElement;
   if (error) {
     errorElement = <p className="text-danger">{error.message}</p>;
@@ -34,7 +38,8 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(email, password);
+     signInWithEmailAndPassword(email, password);
+  
   };
   const resetPassword = () => {
     sendPasswordResetEmail(email);
@@ -43,7 +48,6 @@ const Login = () => {
     <>
       <Form className="w-25 mx-auto mt-5" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          {/* <Form.Label>Email address</Form.Label> */}
           <Form.Control
             onChange={handleEmailChange}
             type="email"
@@ -52,7 +56,6 @@ const Login = () => {
         </Form.Group>
 
         <Form.Group className="mb-2" controlId="formBasicPassword">
-          {/* <Form.Label>Password</Form.Label> */}
           <Form.Control
             onChange={handlePasswordChange}
             type="password"
@@ -71,7 +74,10 @@ const Login = () => {
         {errorElement}
         <p>
           Forget Password?{" "}
-          <a className="signup-text text-decoration-none" onClick={resetPassword}>
+          <a
+            className="signup-text text-decoration-none"
+            onClick={resetPassword}
+          >
             Reset Password
           </a>{" "}
         </p>

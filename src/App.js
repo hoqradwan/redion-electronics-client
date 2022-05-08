@@ -10,7 +10,6 @@ import AddItems from "./Pages/AddItems/AddItems";
 import ManageItems from "./Pages/ManageItems/ManageItems";
 import MyItems from "./Pages/MyItems/MyItems";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
-import Inventory from "./Pages/Inventory/Inventory";
 import Checkout from "./Pages/Checkout/Checkout";
 import RequireAuth from "./Pages/Auth/RequireAuth/RequireAuth";
 import Footer from "./Pages/Shared/Footer/Footer";
@@ -25,7 +24,6 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<About></About>}></Route>
-        {/* <Route path="/inventory" element={<Inventory></Inventory>}></Route> */}
         <Route
           path="/products/:productId"
           element={

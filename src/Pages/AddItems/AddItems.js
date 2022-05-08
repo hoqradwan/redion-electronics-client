@@ -1,13 +1,9 @@
-import { Toast } from "bootstrap";
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import auth from "../../firebase.init";
 import './AddItems.css';
 
 const AddItems = () => {
   const {register, handleSubmit} = useForm();
-  const [user] = useAuthState(auth);
   const onSubmit = (data) => {
     const url1 = `https://safe-lake-62248.herokuapp.com/products`;
     fetch(url1, {
