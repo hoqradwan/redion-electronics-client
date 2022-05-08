@@ -14,14 +14,14 @@ const Footer = () => {
     <div className="footer-content pt-5 mt-5">
       <div className="container">
         <div className="row">
-          <div className="col-9">
+          <div className="col-lg-9 col-12 mb-3">
             <h2>RediOn Electronics</h2>
             <p>Address: Level-9, Rupayon center, Banglamotor, Dhaka</p>
             <p>Official: redionelectronics@gmail.com</p>
             <p>Helpline: 01232323232, 01243434344</p>
             <p>(Available: Sun-Thu, 10:00 AM to 8:00 PM)</p>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3 col-12">
             <h2>Resources</h2>
             <p>Support</p>
             <p>Contact</p>

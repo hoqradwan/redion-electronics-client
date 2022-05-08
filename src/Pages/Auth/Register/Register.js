@@ -68,9 +68,7 @@ const Register = () => {
         {password !== confirmPass && (
           <p className="text-danger">Password didn't matach</p>
         )}
-        {/*   <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group> */}
+      
         <p>
           Already have an account?{" "}
           <Link className="text-decoration-none" to="/login">
