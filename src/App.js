@@ -11,10 +11,10 @@ import ManageItems from "./Pages/ManageItems/ManageItems";
 import MyItems from "./Pages/MyItems/MyItems";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Inventory from "./Pages/Inventory/Inventory";
-import ProductDetail from "./ProductDetail/ProductDetail";
 import Checkout from "./Pages/Checkout/Checkout";
 import RequireAuth from "./Pages/Auth/RequireAuth/RequireAuth";
 import Footer from "./Pages/Shared/Footer/Footer";
+import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 
 function App() {
   return (

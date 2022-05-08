@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 const useProducts = () =>{
     const [products, setProducts] = useState([]);
-
     useEffect(() => {
         fetch("https://safe-lake-62248.herokuapp.com/products")
           .then((res) => res.json())

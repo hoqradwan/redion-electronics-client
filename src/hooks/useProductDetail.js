@@ -5,7 +5,6 @@ const useProductDetail = productId =>{
 
     useEffect(()=>{
     const url = `https://safe-lake-62248.herokuapp.com/products/${productId}`;
-        console.log(url)
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data))

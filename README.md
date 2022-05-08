@@ -1,6 +1,6 @@
 # Redion Electronics
 
-Live website [Redion Electronics](redion-electronics.firebaseapp.com).
+Live website [Redion Electronics](redion-electronics.web.app).
 
 * This is a warehouse inventory website.
 * I used React JS to build the client of this project.
