@@ -6,12 +6,17 @@ import "./ProductDetail.css";
 const ProductDetail = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
-  const [product] = useProductDetail(productId);
+  const [isReload, setIsReload ] = useState(false);
+  
+  const [product, setProduct] = useState({});
+
+    useEffect(()=>{
+    const url = `https://safe-lake-62248.herokuapp.com/products/${productId}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setProduct(data))
+    },[productId, isReload])
   let { _id, name, image, description, price, quantity, supplier } = product;
-  const [q, setQ] = useState(0);
-  useEffect(() => {
-    setQ(quantity);
-  }, [quantity]);
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -32,14 +37,13 @@ const ProductDetail = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setQ(updatedProduct.quantity);
+        event.target.reset();
+        setIsReload(!isReload)
       });
   };
   const handleDeliver = () => {
-    if (quantity > 0) {
-      quantity = quantity - 1;
-    }
-    const updatedProduct = { quantity };
+    const quantity = parseInt(product.quantity) -1 ;
+    const updatedProduct = {quantity} ;
 
     const url = `https://safe-lake-62248.herokuapp.com/products/${productId}`;
     fetch(url, {
@@ -54,7 +58,7 @@ const ProductDetail = () => {
         console.log(data);
         const proceed = window.confirm("Deliver product?");
         if(proceed){
-          setQ(quantity);
+          setIsReload(!isReload)
         }
       });
   };
@@ -77,7 +81,7 @@ const ProductDetail = () => {
           <h6>Product id: {_id}</h6>
           <p>{description}</p>
           <p className="price fw-bold fs-4">$ {price}</p>
-          <p className="lh-1">Quantity: {q}</p>
+          <p className="lh-1">Quantity: {quantity}</p>
           <p className="text-muted lh-1">{supplier}</p>
           <form onSubmit={handleForm}>
             <input className="quantity" name="name" type="number" />

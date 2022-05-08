@@ -15,6 +15,9 @@ const AddItems = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+        if(data.insertedId){
+          alert('Item inserted')
+        }
         console.log(result);
       });
     const url2 = `https://safe-lake-62248.herokuapp.com/items`;
